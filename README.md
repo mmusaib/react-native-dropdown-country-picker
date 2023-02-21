@@ -10,9 +10,8 @@
 
 🟢 React Native Dropdown Country Picker Similar as HTML Select List. It's not a modal. 
 
-<a href="https://twitter.com/_mmusaib" target="_blank">
-<img src="https://i.imgur.com/IGTvb2x.gif" width="250" />
-</a>
+<a href="https://twitter.com/_mmusaib" target="_blank"></a>
+<img src="https://i.imgur.com/IGTvb2x.gif" width="400" />
 </div>
 
 
