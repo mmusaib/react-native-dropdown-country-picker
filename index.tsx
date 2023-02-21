@@ -1,5 +1,5 @@
 import React,{JSXElementConstructor} from 'react';
-import { View, Text, StyleSheet,ScrollView, TouchableOpacity, Animated, TextInput, Image, ViewStyle } from 'react-native';
+import { View, Text, StyleSheet,FlatList, TouchableOpacity, Animated, TextInput, Image, ViewStyle } from 'react-native';
 import { countries, _getFlag } from './_inc/_lib/enhanced';
 
 
@@ -79,6 +79,7 @@ const CountryCodeSelectList: React.FC<CountryCodeProps> = ({
     const [_selected, _setSelected] = React.useState(false);
     const [_search, _setSearch] = React.useState('');
     const [_countries, _setCountries] = React.useState(countries);
+    
     const slideAnim = React.useRef(new Animated.Value(0)).current;
 
 
@@ -115,10 +116,11 @@ const CountryCodeSelectList: React.FC<CountryCodeProps> = ({
     
 
     const RenderBtn = () => {
+        
         if(!_selected){
             return(
                 <View style={[styles.row]}>
-                    <TouchableOpacity style={{ flexDirection: 'row' }} onPress={ () => slideDown() }>
+                    <TouchableOpacity style={{ flexDirection: 'row' }} onPress={ () => {_setCountries(countries); slideDown()} }>
                         <View style={[styles.selectedContainer, countryCodeContainerStyles]}>
                             <Text style={{color: '#000', marginRight: 5}}>{_getFlag(selected)}</Text>
                             <Text style={[countryCodeTextStyles]}>{selected}</Text>
@@ -162,40 +164,36 @@ const CountryCodeSelectList: React.FC<CountryCodeProps> = ({
             )
         }
     }
-    
-    React.useEffect(() => {
 
-    }, [])
+
+    const renderCountryItem = ({item}) => {
+        return(
+            <TouchableOpacity style={ styles.countryContainer } key={item.code} onPress={ () => {setSelected(item.dial_code); setCountryDetails(item); slideUp();} }>
+                <Text style={styles.countryFlag}>{ item?.flag }</Text>
+                <Text style={ [styles.countryText, dropdownTextStyles] } >{ item?.name }</Text>
+            </TouchableOpacity>
+        )
+    }
+    
     
     return(
         <View style={styles.container}>
-            <RenderBtn />
+            { RenderBtn() }
+
             {
                 (_selected) 
                 ?
                     <Animated.View
                         style={{ maxHeight: slideAnim }}
                     >
-                        <ScrollView
+                       <FlatList 
+                            data={_countries}
                             style={[styles.valuesContainer, dropdownStyles]}
                             showsVerticalScrollIndicator={false}
-                        >
-                        {
-                            (_countries?.length > 0)
-                            ?
-                               _countries?.map((country, index) => {    
-                                    return(
-                                        <TouchableOpacity style={ styles.countryContainer } key={index} onPress={ () => {setSelected(country.dial_code); setCountryDetails(country); slideUp();} }>
-                                            <Text style={styles.countryFlag}>{ country?.flag }</Text>
-                                            <Text style={ [styles.countryText, dropdownTextStyles] } >{ country?.name }</Text>
-                                        </TouchableOpacity>
-                                    )
-                                })
-                            :
-                            <Text style={{padding: 15, textAlign: 'center'}}>No Result Found</Text>
-                        }
-                        
-                        </ScrollView>
+                            renderItem={renderCountryItem}
+                            keyExtractor={(item) => item.code}
+                            ListEmptyComponent={ <Text style={{padding: 15, textAlign: 'center'}}>No Result Found</Text> }
+                        />
                     </Animated.View>
                 :
                     <></>
