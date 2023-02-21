@@ -1,0 +1,23 @@
+{
+  "name": "react-native-dropdown-country-picker",
+  "version": "1.0.0",
+  "description": "React Native Dropdown Country Picker is same as that of HTML select list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmusaib/react-native-dropdown-country-picker.git"
+  },
+  "keywords": [
+    "expo",
+    "reactnative"
+  ],
+  "author": "Muhammad Musaib",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmusaib/react-native-dropdown-country-picker/issues"
+  },
+  "homepage": "https://github.com/mmusaib/react-native-dropdown-country-picker#readme"
+}
