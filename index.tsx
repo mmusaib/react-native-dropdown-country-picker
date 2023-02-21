@@ -60,7 +60,7 @@ interface CountryCodeProps {
 }
 
 
-const CountryCodeSelectList: React.FC<CountryCodeProps> = ({
+const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
     selected, 
     setSelected,
     setCountryDetails= () => {}, 
@@ -204,7 +204,7 @@ const CountryCodeSelectList: React.FC<CountryCodeProps> = ({
 }
 
 
-export default CountryCodeSelectList;
+export default CountryCodeDropdownPicker;
 
 const styles = StyleSheet.create({
     row: {

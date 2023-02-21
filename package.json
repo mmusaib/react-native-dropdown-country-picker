@@ -1,8 +1,8 @@
 {
   "name": "react-native-dropdown-country-picker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Native Dropdown Country Picker is same as that of HTML select list",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +12,17 @@
   },
   "keywords": [
     "expo",
-    "reactnative"
+    "reactnative",
+    "react native",
+    "easy",
+    "react-native",
+    "react-native-dropdown",
+    "reatct native easy dropdown picker",
+    "react native dropdown country picker",
+    "easy country picker",
+    "expo country picker",
+    "expo dropdown country picker",
+    "expo picker"
   ],
   "author": "Muhammad Musaib",
   "license": "MIT",
