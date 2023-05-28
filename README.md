@@ -99,12 +99,12 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@mmusaib/react-native-drop
 
 
 
-<!-- # ▶️ Watch Tutorial Video -->
+# ▶️ Watch Tutorial Video -->
 
-<!-- [![Watch video](https://i.imgur.com/IAxLuSA.png)](https://youtu.be/eNCsP_YhGBk&t=15s) -->
+ [![Watch video](https://i.imgur.com/QcWCHk9.png)](https://www.youtube.com/watch?v=ZstelmTWhjw)
 
 
-<!-- For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@mmusaib/react-native-stock-star-rating) -->
+<!-- For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@mmusaib/react-native-stock-star-rating)
 
 
 
