@@ -90,7 +90,8 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@mmusaib/react-native-drop
 | phoneStyles | style object | style object to style the text input of phone field (Optional) | N/A
 | searchIcon | string | URL of the icon if you want to replace the search icon (Optional) | N/A
 | closeIcon | string | URL of the icon if you want to replace the close icon (Optional) | N/A
-| searchStyles | style object | style object to style the search input field (Optional) | N/A
+| searchStyles | style object | style object to style the search field (Optional) | N/A
+| searchTextStyles | style object | style object to style the search text input field (Optional) | N/A
 | dropdownStyles | style object | style object to style the dropdown container (Optional) | N/A
 | dropdownTextStyles | style object | style object to style the text inside dropdown container (Optional) | N/A
 

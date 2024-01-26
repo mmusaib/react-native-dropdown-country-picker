@@ -72,6 +72,7 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
     searchIcon,
     closeIcon,
     searchStyles={},
+    searchTextStyles={},
     dropdownStyles={},
     dropdownTextStyles={},
 }) => {
@@ -146,11 +147,11 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
             )
         }else{
             return(
-                <View style={styles.inputBoxContainer}>
+                <View style={[styles.inputBoxContainer, searchStyles]}>
                     <View style={[styles.row, {width: '90%'}]}>
                         <Image source={_static.search} resizeMode={'contain'} style={[styles.icon, {width: 15, height: 15, marginLeft: 10}]} />
                         <TextInput  
-                            style={[{ marginLeft: 5, paddingVertical: 3, flex: 1 }, searchStyles]}
+                            style={[{ marginLeft: 5, paddingVertical: 3, flex: 1 }, searchTextStyles]}
                             onChangeText={ _searchCountry }
                             value={ _search }
                         />
