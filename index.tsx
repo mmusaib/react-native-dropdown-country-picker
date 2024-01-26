@@ -45,9 +45,14 @@ interface CountryCodeProps {
     */
     closeIcon?: string,
     /**
-    * Search Input Text Styles
+    * Search Input Container Styles
     */
     searchStyles?: ViewStyle,
+    /**
+    * Search Input Text Styles
+    */
+    searchTextStyles?: ViewStyle,
+     /**
      /**
     * Search Dropdown Container Styles
     */
