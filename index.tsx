@@ -128,7 +128,7 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
                 <View style={[styles.row]}>
                     <TouchableOpacity style={{ flexDirection: 'row' }} onPress={ () => {_setCountries(countries); slideDown()} }>
                         <View style={[styles.selectedContainer, countryCodeContainerStyles]}>
-                            <Text style={{color: '#000', marginRight: 5}}>{ selected?.flag }</Text>
+                            <Text style={{color: '#000', marginRight: 5}}>{_getFlag(selected)}</Text>
                             <Text style={[countryCodeTextStyles]}>{selected}</Text>
                         </View>
                     </TouchableOpacity>
