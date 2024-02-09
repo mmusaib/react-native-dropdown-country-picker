@@ -9,6 +9,7 @@ import {
   TextInput,
   Image,
   ViewStyle,
+  TextStyle,
 } from "react-native";
 import { countries, _getFlag } from "./_inc/_lib/enhanced";
 
@@ -40,7 +41,7 @@ interface CountryCodeProps {
   /**
    * Style the text inside Country Code
    */
-  countryCodeTextStyles?: ViewStyle;
+  countryCodeTextStyles?: TextStyle;
   /**
    * Phone Text Input Styles
    */
@@ -60,7 +61,7 @@ interface CountryCodeProps {
   /**
    * Search Input Text Styles
    */
-  searchTextStyles?: ViewStyle;
+  searchTextStyles?: TextStyle;
   /**
      /**
     * Search Dropdown Container Styles
@@ -69,7 +70,7 @@ interface CountryCodeProps {
   /**
    * Search Dropdown Text Styles
    */
-  dropdownTextStyles?: ViewStyle;
+  dropdownTextStyles?: TextStyle;
   /**
    * Search Dropdown Text Container Styles
    */
@@ -91,6 +92,7 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
   searchTextStyles = {},
   dropdownStyles = {},
   dropdownTextStyles = {},
+  dropdownTextContainerStyles = {},
 }) => {
   const [_selected, _setSelected] = React.useState(false);
   const [_search, _setSearch] = React.useState("");
