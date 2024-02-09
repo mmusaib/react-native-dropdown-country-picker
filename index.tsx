@@ -13,6 +13,8 @@ import {
 } from "react-native";
 import { countries, _getFlag } from "./_inc/_lib/enhanced";
 
+const Countries: CountryCodeDropdownItemProps[] = countries;
+
 interface CountryCodeProps {
   /**
    * Selected Country Dial Code
@@ -21,11 +23,13 @@ interface CountryCodeProps {
   /**
    * Function to set the country
    */
-  setSelected: React.Dispatch<React.SetStateAction<undefined>>;
+  setSelected: React.Dispatch<React.SetStateAction<string>>;
   /**
    * Function to set the country
    */
-  setCountryDetails: React.Dispatch<React.SetStateAction<undefined>>;
+  setCountryDetails: React.Dispatch<
+    React.SetStateAction<CountryCodeDropdownItemProps>
+  >;
   /**
    * State variable for storing the phone number
    */
@@ -33,7 +37,7 @@ interface CountryCodeProps {
   /**
    * Function to set the phone number state variable
    */
-  setPhone?: React.Dispatch<React.SetStateAction<undefined>>;
+  setPhone?: React.Dispatch<React.SetStateAction<string | undefined>>;
   /**
    * Style the Country Code Container
    */
@@ -72,9 +76,16 @@ interface CountryCodeProps {
    */
   dropdownTextStyles?: TextStyle;
   /**
-   * Search Dropdown Text Container Styles
+   * Search Dropdown List Item Styles
    */
   dropdownTextContainerStyles?: ViewStyle;
+}
+
+interface CountryCodeDropdownItemProps {
+  name: string;
+  dial_code: string;
+  code: string;
+  flag: string;
 }
 
 const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
@@ -96,7 +107,7 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
 }) => {
   const [_selected, _setSelected] = React.useState(false);
   const [_search, _setSearch] = React.useState("");
-  const [_countries, _setCountries] = React.useState(countries);
+  const [_countries, _setCountries] = React.useState(Countries);
 
   const slideAnim = React.useRef(new Animated.Value(0)).current;
 
@@ -122,9 +133,9 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
     }).start(() => _setSelected(false));
   };
 
-  function _searchCountry(country) {
+  function _searchCountry(country: string) {
     _setSearch(country);
-    let c = countries.filter((item) => {
+    let c = Countries.filter((item) => {
       return item.name.includes(country);
     });
     _setCountries(c);
@@ -137,7 +148,7 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
           <TouchableOpacity
             style={{ flexDirection: "row" }}
             onPress={() => {
-              _setCountries(countries);
+              _setCountries(Countries);
               slideDown();
             }}
           >
@@ -209,7 +220,11 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
     }
   };
 
-  const renderCountryItem = ({ item }) => {
+  const renderCountryItem = ({
+    item,
+  }: {
+    item: CountryCodeDropdownItemProps;
+  }) => {
     return (
       <TouchableOpacity
         style={[styles.countryContainer, dropdownTextContainerStyles]}
