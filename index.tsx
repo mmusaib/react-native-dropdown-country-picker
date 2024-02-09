@@ -91,7 +91,7 @@ interface CountryCodeDropdownItemProps {
 const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
   selected,
   setSelected,
-  setCountryDetails = () => {},
+  setCountryDetails = (details: CountryCodeDropdownItemProps) => {},
   phone,
   setPhone,
   countryCodeContainerStyles = {},
@@ -161,7 +161,7 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
               <Text style={[countryCodeTextStyles]}>{selected}</Text>
             </View>
           </TouchableOpacity>
-          {phone != undefined && setPhone != undefined ? (
+          {phone != undefined && setPhone != undefined && (
             <TextInput
               style={[
                 {
@@ -181,8 +181,6 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
               onChangeText={setPhone}
               value={phone}
             />
-          ) : (
-            <></>
           )}
         </View>
       );
@@ -190,11 +188,13 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
       return (
         <View style={[styles.inputBoxContainer, searchStyles]}>
           <View style={[styles.row, { width: "90%" }]}>
-            <Image
-              source={_static.search}
-              resizeMode={"contain"}
-              style={[styles.icon, { width: 15, height: 15, marginLeft: 10 }]}
-            />
+            {_static.search && (
+              <Image
+                source={_static.search}
+                resizeMode={"contain"}
+                style={[styles.icon, { width: 15, height: 15, marginLeft: 10 }]}
+              />
+            )}
             <TextInput
               style={[
                 { marginLeft: 5, paddingVertical: 3, flex: 1 },
@@ -209,11 +209,13 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
             onPress={() => slideUp()}
             style={{ marginHorizontal: 10 }}
           >
-            <Image
-              source={_static.close}
-              resizeMode={"contain"}
-              style={styles.icon}
-            />
+            {_static.close && (
+              <Image
+                source={_static.close}
+                resizeMode={"contain"}
+                style={styles.icon}
+              />
+            )}
           </TouchableOpacity>
         </View>
       );
@@ -247,7 +249,7 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
     <View style={styles.container}>
       {RenderBtn()}
 
-      {_selected ? (
+      {_selected && (
         <Animated.View style={{ maxHeight: slideAnim }}>
           <FlatList
             data={_countries}
@@ -262,8 +264,6 @@ const CountryCodeDropdownPicker: React.FC<CountryCodeProps> = ({
             }
           />
         </Animated.View>
-      ) : (
-        <></>
       )}
     </View>
   );
