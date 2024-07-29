@@ -1,6 +1,6 @@
 {
   "name": "react-native-dropdown-country-picker",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "React Native Dropdown Country Picker is same as that of HTML select list",
   "main": "index.tsx",
   "scripts": {
