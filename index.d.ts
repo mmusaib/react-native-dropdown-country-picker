@@ -1,4 +1,4 @@
-import {ViewStyle} from 'react-native';
+import {ViewStyle, TextStyle} from 'react-native';
 
 
 export interface CountryCodeProps {
@@ -13,7 +13,7 @@ export interface CountryCodeProps {
       /**
     * Function to set the country
     */
-      setCountryDetails: React.Dispatch<React.SetStateAction<undefined>>,
+      setCountryDetails?: React.Dispatch<React.SetStateAction<undefined>>,
      /**
     * State variable for storing the phone number
     */
@@ -29,7 +29,7 @@ export interface CountryCodeProps {
      /**
     * Style the text inside Country Code 
     */
-     countryCodeTextStyles?: ViewStyle,
+     countryCodeTextStyles?: TextStyle,
      /**
     * Phone Text Input Styles
     */

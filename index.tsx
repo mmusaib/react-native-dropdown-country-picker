@@ -1,5 +1,5 @@
 import React,{JSXElementConstructor} from 'react';
-import { View, Text, StyleSheet,FlatList, TouchableOpacity, Animated, TextInput, Image, ViewStyle } from 'react-native';
+import { View, Text, StyleSheet,FlatList, TouchableOpacity, Animated, TextInput, Image, ViewStyle, TextStyle } from 'react-native';
 import { countries, _getFlag } from './_inc/_lib/enhanced';
 
 
@@ -15,7 +15,7 @@ interface CountryCodeProps {
       /**
     * Function to set the country
     */
-      setCountryDetails: React.Dispatch<React.SetStateAction<undefined>>,
+      setCountryDetails?: React.Dispatch<React.SetStateAction<undefined>>,
      /**
     * State variable for storing the phone number
     */
@@ -31,7 +31,7 @@ interface CountryCodeProps {
      /**
     * Style the text inside Country Code 
     */
-     countryCodeTextStyles?: ViewStyle,
+     countryCodeTextStyles?: TextStyle,
      /**
     * Phone Text Input Styles
     */
