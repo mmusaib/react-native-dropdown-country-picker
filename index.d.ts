@@ -49,7 +49,7 @@ export interface CountryCodeProps {
     /**
     * Search Input Text Styles
     */
-    searchTextStyles?: ViewStyle,
+    searchTextStyles?: TextStyle,
      /**
     * Search Dropdown Container Styles
     */
@@ -57,6 +57,6 @@ export interface CountryCodeProps {
      /**
     * Search Dropdown Text Styles
     */
-     dropdownTextStyles?: ViewStyle
+     dropdownTextStyles?: TextStyle
 
 }

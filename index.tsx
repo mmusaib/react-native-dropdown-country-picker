@@ -51,7 +51,7 @@ interface CountryCodeProps {
     /**
     * Search Input Text Styles
     */
-    searchTextStyles?: ViewStyle,
+    searchTextStyles?: TextStyle,
      /**
      /**
     * Search Dropdown Container Styles
@@ -60,7 +60,7 @@ interface CountryCodeProps {
      /**
     * Search Dropdown Text Styles
     */
-     dropdownTextStyles?: ViewStyle
+     dropdownTextStyles?: TextStyle
 
 }
 
