@@ -1,4 +1,4 @@
-import React,{JSXElementConstructor} from 'react';
+import React from 'react';
 import { View, Text, StyleSheet,FlatList, TouchableOpacity, Animated, TextInput, Image, ViewStyle, TextStyle } from 'react-native';
 import { countries, _getFlag } from './_inc/_lib/enhanced';
 
